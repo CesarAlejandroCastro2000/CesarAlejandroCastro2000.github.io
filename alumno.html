@@ -5,7 +5,7 @@
   <meta name="viewport"
     content="width=device-width,
        initial-scale=1.0">
-  <title>Alumno</title>
+  <title>Paciente</title>
   <script
     src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js">
     </script>
@@ -30,20 +30,20 @@
   <form name="forma">
     <mi-nav></mi-nav>
     <header>
-      <h1>Alumno</h1>
+      <h1>Paciente</h1>
       <div class="herramientas">
         <a href="alumnos.html">
           Cancelar</a>
         <button>Guardar</button>
         <button name="eliminar"
           type="button">
-          Eliminar
+          Dar de baja
         </button>
       </div>
     </header>
     <p>
       <label>
-        Matricula
+        Folio
         <input name="matricula"
           type="text" required>
       </label>
@@ -64,14 +64,14 @@
     </p>
     <p>
       <label>
-        Grupo
+        Enfermedad
         <input name="grupo"
           type="text" required>
       </label>
     </p>
     <p>
       <label>
-        Fecha
+        Fecha de ingreso
         <input name="fecha" type="date" required>
       </label>
     </p>
