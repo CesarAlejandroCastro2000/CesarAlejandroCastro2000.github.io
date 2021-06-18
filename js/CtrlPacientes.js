@@ -50,8 +50,7 @@ function htmlLista(snap) {
   } else {
     html += /* html */
       `<li class="vacio">
-        -- No hay alumnos
-        registrados. --
+        ** No Hay Pacientes Registrados En El Sistema**
       </li>`;
   }
   lista.innerHTML = html;
@@ -78,7 +77,7 @@ function htmlFila(doc) {
   return ( /* html */
     `<li>
       <a class="fila" href=
-  "alumno.html?${parámetros}">
+  "paciente.html?${parámetros}">
         <strong class="primario">
           ${matricula} ${nombre} ${dformat}
         </strong>

@@ -3,8 +3,7 @@ class MiFooter
   connectedCallback() {
     this.innerHTML = /* html */
       `<p>
-        &copy; 2021
-        Cesar Castro.
+        Copyright &copy; 2021 Castro Reyes Cesar Alejandro
       </p>`;
   }
 }

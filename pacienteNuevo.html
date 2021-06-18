@@ -5,16 +5,15 @@
   <meta name="viewport"
     content="width=device-width,
        initial-scale=1.0">
-  <title>Paciente</title>
+  <title>
+    Registro De Pacientes
+  </title>
   <script
-    src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js">
-    </script>
+    src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
   <script
-    src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js">
-    </script>
+    src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
   <script
-    src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js">
-    </script>
+    src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
   <script src="js/init.js">
   </script>
   <script type="module"
@@ -30,14 +29,13 @@
   <form name="forma">
     <mi-nav></mi-nav>
     <header>
-      <h1>Paciente</h1>
+      <h1>Paciente Nuevo</h1>
       <div class="herramientas">
-        <a href="alumnos.html">
+        <a
+          href="pacientes.html">
           Cancelar</a>
-        <button>Guardar</button>
-        <button name="eliminar"
-          type="button">
-          Dar de baja
+        <button type="submit">
+          Guardar Registro
         </button>
       </div>
     </header>
@@ -50,7 +48,7 @@
     </p>
     <p>
       <label>
-        Nombre
+        Nombre Del Paciente
         <input name="nombre"
           type="text" required>
       </label>
@@ -71,14 +69,15 @@
     </p>
     <p>
       <label>
-        Fecha de ingreso
-        <input name="fecha" type="date" required>
+        Fecha De Registro
+        <input name="fecha"
+          type="date" required>
       </label>
     </p>
     <mi-footer></mi-footer>
   </form>
   <script type="module"
-    src="js/CtrlAlumno.js">
+    src="js/CtrlPacienteNuevo.js">
     </script>
 </body>
 </html>
