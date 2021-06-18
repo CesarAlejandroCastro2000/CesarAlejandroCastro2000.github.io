@@ -10,3 +10,4 @@ class MiProgeso
 
 customElements.define(
   "mi-progreso", MiProgeso);
+/* aqui se usa una barra que representa que sera llamada en por cada html */

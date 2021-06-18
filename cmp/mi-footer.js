@@ -10,3 +10,5 @@ class MiFooter
 
 customElements.define(
   "mi-footer", MiFooter);
+/* En este JS lo que haces es que se hace un formtato de footer el cual el llamado en cada html para no
+* declararlo indivuaalmente */

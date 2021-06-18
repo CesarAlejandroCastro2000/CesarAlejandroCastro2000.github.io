@@ -7,15 +7,15 @@ import {
   muestraError
 } from "../lib/util.js";
 import {
-  muestraAlumnos
+  muestraPacientes
 } from "./navegacion.js";
 import {
   tieneRol
 } from "./seguridad.js";
 
-const daoAlumno =
+const daoPaciente =
   getFirestore().
-    collection("Alumno");
+    collection("Paciente");
 const params =
   new URL(location.href).
     searchParams;
@@ -41,7 +41,7 @@ async function protege(usuario) {
 async function busca() {
   try {
     const doc =
-      await daoAlumno.
+      await daoPaciente.
         doc(id).
         get();
     if (doc.exists) {
@@ -50,10 +50,10 @@ async function busca() {
           import("./tipos.js").
                   Alumno} */
       const data = doc.data();
-      forma.matricula.value = data.matricula;
+      forma.folio.value = data.folio;
       forma.nombre.value = data.nombre || "";
       forma.telefono.value = data.telefono || "";
-      forma.grupo.value = data.grupo || "";
+      forma.enfermedad.value = data.enfermedad || "";
       forma.fecha.value = data.fecha || "";
       forma.addEventListener(
         "submit", guarda);
@@ -66,7 +66,7 @@ async function busca() {
     }
   } catch (e) {
     muestraError(e);
-    muestraAlumnos();
+    muestraPacientes();
   }
 }
 
@@ -76,27 +76,27 @@ async function guarda(evt) {
     evt.preventDefault();
     const formData =
       new FormData(forma);
-    const matricula = getString(
-        formData, "matricula").trim();  
+    const folio = getString(
+        formData, "folio").trim();
     const nombre = getString(formData, "nombre").trim();
     const telefono = getString(formData, "telefono").trim();
-    const grupo = getString(formData, "grupo").trim();
+    const enfermedad = getString(formData, "enfermedad").trim();
     const fecha = getString(formData, "fecha").trim();
     /**
      * @type {
         import("./tipos.js").
                 Alumno} */
     const modelo = {
-      matricula, 
+      folio,
       nombre,
       telefono,
-      grupo,
+      enfermedad,
       fecha
     };
-    await daoAlumno.
+    await daoPaciente.
       doc(id).
       set(modelo);
-    muestraAlumnos();
+    muestraPacientes();
   } catch (e) {
     muestraError(e);
   }
@@ -106,10 +106,10 @@ async function elimina() {
   try {
     if (confirm("Confirmar la " +
       "eliminación")) {
-      await daoAlumno.
+      await daoPaciente.
         doc(id).
         delete();
-      muestraAlumnos();
+      muestraPacientes();
     }
   } catch (e) {
     muestraError(e);

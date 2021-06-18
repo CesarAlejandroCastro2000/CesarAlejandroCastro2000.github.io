@@ -57,3 +57,5 @@ class MiNav extends HTMLElement {
 
 customElements.define(
   "mi-nav", MiNav);
+
+/* Formato de nav */

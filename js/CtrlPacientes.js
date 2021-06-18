@@ -13,9 +13,9 @@ import {
 /** @type {HTMLUListElement} */
 const lista = document.
   querySelector("#lista");
-const daoAlumno =
+const daoPaciente =
   getFirestore().
-    collection("Alumno");
+    collection("Paciente");
 
 getAuth().
   onAuthStateChanged(
@@ -32,7 +32,7 @@ async function protege(usuario) {
 }
 
 function consulta() {
-  daoAlumno.
+  daoPaciente.
     orderBy("nombre")
     .onSnapshot(
       htmlLista, errConsulta);
@@ -65,7 +65,7 @@ function htmlFila(doc) {
    * @type {import("./tipos.js").
                   Alumno} */
   const data = doc.data();
-  const matricula = cod(data.matricula);
+  const folio = cod(data.folio);
   const nombre = cod(data.nombre);
   var fsf= cod(data.fecha);
   var fecha = new Date(fsf);
@@ -79,7 +79,7 @@ function htmlFila(doc) {
       <a class="fila" href=
   "paciente.html?${parámetros}">
         <strong class="primario">
-          ${matricula} ${nombre} ${dformat}
+          ${folio} ${nombre} ${dformat}
         </strong>
       </a>
      
